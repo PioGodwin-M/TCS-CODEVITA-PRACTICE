@@ -43,13 +43,14 @@ public class Rat {
         while(!q.isEmpty()){
             int[] curr=q.peek();
             q.remove();
-            grid[curr[0]][curr[1]]='x';
+
             int[] dr=new int[]{-1,0,1,0};
             int[] dc=new int[]{0,-1,0,1};
             for(int i=0;i<4;i++){
                 int nr=curr[0]+dr[i];
                 int nc=curr[1]+dc[i];
                 if(nr>=0 && nr<n && nc>=0 && nc<n && grid[nr][nc]=='O'){
+                    grid[nr][nc]='x';
                     q.add(new int[]{nr,nc});
                 }
             }
